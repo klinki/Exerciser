@@ -1,0 +1,47 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# Exerciser
+Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+
+# Group Notes
+Notes related resources of the **Notes API**
+
+## Exercises Collection [/exercises]
+### List all Execises [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging"
+        }, {
+          "id": 2, "title": "Weight lifting"
+        }]
+
+### Create an Execise [POST]
++ Request (application/json)
+
+        { "title": "Squat" }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Squat" }
+
+## Execise [/exercises/{id}]
+A single Execise object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Execise to perform action with. Has example value.
+
+### Retrieve an Exercise [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "name": "Pushup" }
+
+### Remove an Execise [DELETE]
++ Response 204
